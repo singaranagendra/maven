@@ -1,12 +1,12 @@
-node('master') 
-{
-    stage('Continuous Download') 
-	{
-    git 'https://github.com/sunildevops77/maven.git'
+node('slave-1') {
+    stage('continuous download_dev')
+     {
+   git 'https://github.com/sunildevops77/maven.git'
 	}
-    stage('Continuous Build') 
-	{
-    sh label: '', script: 'mvn package'
+stage('continuous build_dev')
+     {
+   sh 'mvn package'
 	}
-  
+
 }
+
